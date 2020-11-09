@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import HomeProvider from './components/contexts/comic.provider';
+import theme from "./theme";
+import { ThemeProvider } from "@material-ui/styles";
+import { Route, Switch } from "react-router-dom";
+import Comics from './pages/comics/index';
+import Favorites from './pages/favorites/index';
+import './assets/scss/index.scss';
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HomeProvider>
+      <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Route path="/" component={Comics} exact />
+          <Route path="/comics" component={Comics} exact />
+          <Route path="/favorites" component={Favorites} exact />
+      </ThemeProvider>
+    </HomeProvider>
   );
 }
 

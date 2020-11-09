@@ -1,0 +1,86 @@
+@font-face {
+  font-family: "Oswald Light";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Oswald//Oswald-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Oswald Medium";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Oswald//Oswald-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Oswald SemiBold";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Oswald//Oswald-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Oswald Bold";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Oswald//Oswald-Bold.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #2B2B2B;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  // background-image: url("./../images/avengers.jpg");
+}
+
+body::after {
+  content: "";
+  opacity: 0.5;
+  background: url("./../images/avengers.jpg") no-repeat fixed top;
+  background-blend-mode: luminosity;
+  /* also change the blend mode to what suits you, from darken, to other 
+  many options as you deem fit*/
+  background-size: cover;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  height: 100%;
+}
+
+:not(pre) > code {
+  font-family: Oswald, Inconsolata, Monaco, Consolas, "Courier New", Courier,
+    monospace;
+  background-color: #eeeeee;
+  padding: 0px 0px;
+  direction: ltr;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+  font-size: 12px;
+}
