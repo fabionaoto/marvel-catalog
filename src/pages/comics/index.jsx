@@ -73,8 +73,10 @@ export default function Comics() {
     const getComics = async () => {
       const data = await comicsServices.getComics(character.id, page, rowsPerPage);
         setTotalComics(data.total);
-        setComics(data.results);
-        comicsHook.updateComics(data.results);
+        if (data.results.length > 0) {
+          setComics(data.results);
+          comicsHook.updateComics(data.results);
+        }
     }
 
     const getCharacter = async () => {
